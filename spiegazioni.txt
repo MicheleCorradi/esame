@@ -10,3 +10,6 @@ Creo le funzioni aggiungi,cancella,cerca e stampa dipartimento
 
 Come metodo per salvare i dati in maniera permanente sul disco rigido ho utlizzato pickle
 Quindi ho creato due funzioni di salva e carica dove al loro interno ho utlizzato pickle.dump e pickle.load che mi permettono di salvare i  dati  
+
+
+Sono riuscito ad integrare anche sql
