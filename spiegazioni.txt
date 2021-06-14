@@ -1,0 +1,12 @@
+Come prima cosa creo la classe stampante_3D e assegno ad essa i dettagli necessari 
+
+Creo la funzione modifica e la funzione stampa
+
+Successivamente creo la classe dipartimento in modo da poter assegnare a ogni stampante un diverso dipartimento se necessario
+
+Successivamente creo una lista che mi permette di salvare tute le stampanti riferite ad uno specifico dipartimento
+
+Creo le funzioni aggiungi,cancella,cerca e stampa dipartimento 
+
+Come metodo per salvare i dati in maniera permanente sul disco rigido ho utlizzato pickle
+Quindi ho creato due funzioni di salva e carica dove al loro interno ho utlizzato pickle.dump e pickle.load che mi permettono di salvare i  dati  
