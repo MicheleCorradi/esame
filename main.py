@@ -1,6 +1,6 @@
 import pickle
 
-class Stampante():
+class Prototipo():
 
     def __init__(self,nome,descrizione):
         self.nome = nome 
@@ -11,57 +11,57 @@ class Stampante():
         self.descrizione = descrizione
 
     def stampa(self):
-        print(f"La stampante {self.nome},{self.descrizione}")
+        print(f"Il Prototipo {self.nome},{self.descrizione}")
 
 class Dipartimento():
     def __init__(self,nome):
         self.nome = nome
-        self.stampanti = list()
+        self.prototipi = list()
         self.database = self.nome + ".p"
 
-    def aggiungi_stampante(self,stampante):
-        self.stampanti.append(stampante)
-        print("La stampante é stata aggiunta con successo!")
+    def aggiungi_prototipo(self,prototipo):
+        self.prototipi.append(prototipo)
+        print("Il prototipo é stato aggiunto con successo!")
 
-    def cancella(self,stampante):
-        if stampante in self.stampanti:
-            self.stampanti.remove(stampante)
-            print("La stampante é stata rimossa con successo!")
+    def cancella(self,prototipo):
+        if prototipo in self.prototipi:
+            self.prototipi.remove(prototipo)
+            print("Il prototipo é stato rimosso con successo!")
         else:
-            print("La stampante non é presente!")
+            print("Il prototipo non é presente!")
 
-    def cerca_stampante(self,nome):
-        for stampante in self.stampanti:
-            if stampante.nome == nome:
-                stampante.stampa()
+    def cerca_prototipo(self,nome):
+        for prototipo in self.prototipi:
+            if prototipo.nome == nome:
+                prototipo.stampa()
 
     def stampa_dipartimento(self):
-        for stampante in self.stampanti:
-            stampante.stampa()
+        for prototipo in self.prototipi:
+            prototipo.stampa()
 
     def salva(self):
         with open(self.database, 'wb') as file:
-            pickle.dump(self.stampanti, file)
+            pickle.dump(self.prototipi, file)
 
     def carica(self):
         with open(self.database, 'rb') as file:
-            self.stampanti = pickle.load(file)
+            self.prototipi = pickle.load(file)
 
-industriale = Dipartimento("industriale")
+telefonia = Dipartimento("telefonia")
 
-stampante1 = Stampante("3DRAG","si tratta di una macchina molto versatile e che si presta a differenti utilizzi")
-stampante2 = Stampante("Alfawise","è una macchina di costruzione cinese, il suo volume è di 300 x 300 x 400 mm")
+prototipo1 = Prototipo("cover-Iphone12","nuova cover per Iphone12")
+prototipo2 = Prototipo("cover-Andoid","nuova cover per Android")
 
-industriale.aggiungi_stampante(stampante1)
-industriale.aggiungi_stampante(stampante2)
+telefonia.aggiungi_prototipo(prototipo1)
+telefonia.aggiungi_prototipo(prototipo2)
 
-#stampante1.modifica("nuova stampante","prova")
+prototipo1.modifica("nuova cover","prova")
 
-#industriale.cancella(stampante2)
+#telefonia.cancella(prototipo2)
 
-#industriale.cerca_stampante("Alfawise")
+telefonia.cerca_prototipo("cover-Iphone12")
 
-industriale.salva()
-industriale.carica()
+telefonia.salva()
+telefonia.carica()
 
-industriale.stampa_dipartimento()
+telefonia.stampa_dipartimento()

@@ -1,10 +1,10 @@
-Come prima cosa creo la classe stampante_3D e assegno ad essa i dettagli necessari.
+Come prima cosa creo la classe prototipo e assegno ad essa i dettagli necessari.
 
 Creo la funzione modifica e la funzione stampa.
 
-Successivamente creo la classe dipartimento in modo da poter assegnare a ogni stampante un diverso dipartimento se necessario.
+Successivamente creo la classe dipartimento in modo da poter assegnare a ogni prototipo un diverso dipartimento se necessario.
 
-Successivamente creo una lista che mi permette di salvare tute le stampanti riferite ad uno specifico dipartimento
+Successivamente creo una lista che mi permette di salvare tutti i prototipi riferiti ad uno specifico dipartimento
 
 Creo le funzioni aggiungi,cancella,cerca e stampa dipartimento.
 

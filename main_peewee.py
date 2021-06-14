@@ -1,25 +1,25 @@
 import peewee
 
-db = peewee.SqliteDatabase("stampanti_peewee.db")
+db = peewee.SqliteDatabase("prototipi_peewee.db")
 
-class DipartimentoStampanti(peewee.Model):
+class DipartimentoPrototipi(peewee.Model):
     nome = peewee.CharField()
     descrizione = peewee.CharField()
     dipartimento = peewee.CharField()
 
     class Meta:
         database = db
-        db_table = 'stampanti'
+        db_table = 'prototipi'
 
-DipartimentoStampanti.create_table(DipartimentoStampanti)
+DipartimentoPrototipi.create_table(DipartimentoPrototipi)
 
-stampante1 = DipartimentoStampanti.create(nome = "3DRAG",descrizione = "si tratta di una macchina molto versatile e che si presta a differenti utilizzi",dipartimento = "industriale")
-stampante2 = DipartimentoStampanti.create(nome = "Alfawise",descrizione = "è una macchina di costruzione cinese, il suo volume è di 300 x 300 x 400 mm",dipartimento = "industriale")
+prototipo1 = DipartimentoPrototipi.create(nome = "cover-Iphone12",descrizione = "nuova cover per Iphone12",dipartimento = "telefonia")
+prototipo2 = DipartimentoPrototipi.create(nome = "cover-Andoid",descrizione = "nuova cover per Android",dipartimento = "telefonia")
 
-stampante1.save()
-stampante2.save()
+prototipo1.save()
+prototipo2.save()
 
-stampanti = DipartimentoStampanti.select()
+prototipi = DipartimentoPrototipi.select()
 
-for stampante in stampanti:
-    print(stampante.nome,stampante.descrizione)
+for prototipo in prototipi:
+    print(prototipo.nome,prototipo.descrizione)
